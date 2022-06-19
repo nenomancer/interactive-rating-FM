@@ -24,4 +24,5 @@ Users should be able to:
 ### Screenshot
 
 ![Screen 1](./screen.png)
+<img src="./images/screen.png" />
 ![Screen 2](./screen2.png)
