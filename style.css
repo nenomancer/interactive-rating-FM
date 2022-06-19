@@ -60,7 +60,7 @@ p {
     var(--dark-blue) 30%,
     hsl(213, 25%, 12%) 100%
   );
-  width: 440px;
+  max-width: 420px;
   padding: 35px;
   border-radius: 40px;
   overflow: hidden;
@@ -76,12 +76,13 @@ p {
 
 .rating {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .circle {
-  height: 3rem;
-  width: 3rem;
+  --height: 3rem;
+  height: var(--height);
+  width: var(--height);
   border-radius: 50%;
   background-color: var(--medium-grey);
   color: var(--light-grey);
@@ -172,3 +173,12 @@ p {
     transform: translate(-50%, -50%) scale(0);
   }
 }
+
+/* @media (max-width: 480px) {
+  .card {
+    width: 80%;
+  }
+  .circle {
+    --height: 2.5rem;
+  }
+} */

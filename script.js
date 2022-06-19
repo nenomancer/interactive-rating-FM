@@ -1,16 +1,18 @@
 const ratingPoints = document.querySelectorAll("[data-rating-point]");
 const steps = [...document.querySelectorAll(".card")];
 let score = 0;
-const btn = document.querySelector(".btn");
+const btns = document.querySelectorAll(".btn");
 
-btn.addEventListener("click", function () {
-  if (score === 0) {
-    alert("Please add a rating");
-  } else {
-    steps[0].classList.remove("active");
-    steps[1].classList.add("active");
-  }
-});
+for (let btn of btns) {
+  btn.addEventListener("click", function () {
+    if (score === 0) {
+      alert("Please add a rating");
+    } else {
+      steps[0].classList.toggle("active");
+      steps[1].classList.toggle("active");
+    }
+  });
+}
 
 const clickHandler = (e) => {
   for (let item of ratingPoints) {
