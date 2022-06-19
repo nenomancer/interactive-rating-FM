@@ -1,0 +1,174 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 18%, 20%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+}
+
+.container {
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+  background-color: var(--very-dark-blue);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: Overpass;
+}
+
+h1,
+h2 {
+  color: white;
+  padding-bottom: 0.5rem;
+}
+
+p {
+  font-size: 15px;
+  margin-bottom: 2rem;
+  line-height: 24px;
+  color: var(--light-grey);
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: radial-gradient(
+    ellipse at top,
+    var(--dark-blue) 30%,
+    hsl(213, 25%, 12%) 100%
+  );
+  width: 440px;
+  padding: 35px;
+  border-radius: 40px;
+  overflow: hidden;
+  /* display: none; */
+  transform: scale(1);
+  animation: fadeOut 250ms ease-in-out forwards;
+}
+
+.active {
+  display: block;
+  animation: fadeIn 250ms 250ms ease-in-out both;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.circle {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: var(--medium-grey);
+  color: var(--light-grey);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.rated {
+  background-color: var(--light-grey);
+  color: white;
+}
+
+[data-rating-point]:hover {
+  background-color: var(--orange);
+  color: white;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: var(--orange);
+  width: 100%;
+  height: 40px;
+  border-radius: 100vmax;
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 6px;
+  font-family: Overpass;
+}
+
+.btn:hover {
+  background-color: white;
+  color: var(--orange);
+  cursor: pointer;
+}
+
+#thanks {
+  text-align: center;
+}
+
+.rating-msg {
+  background-color: var(--medium-grey);
+  color: var(--orange);
+  width: max-content;
+  margin: 2rem auto;
+  border-radius: 100vmax;
+  padding: 8px 20px;
+  font-size: 15px;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  color: var(--light-grey);
+  text-align: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(50%, -50%);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-100%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  40% {
+    opacity: .25;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
