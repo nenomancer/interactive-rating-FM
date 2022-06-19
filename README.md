@@ -23,5 +23,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Screen 1](./screen.png)
-![Screen 2](./screen2.png)
+Main Screen
+<img src="./images/screen.png"/>
+
+Second Screen
+<img src="./images/screen2.png"/>
